@@ -2,39 +2,38 @@
 layout: home
 
 hero:
-  name: "Ateng-AI"
-  text: "工业级 AI 智能体与技术架构知识库"
-  tagline: 持续沉淀 Agentic Workflow 智能体工程范式、MCP 协议生态、Skills 扩展库与本地大模型实践
+  name: "Ateng-Agent"
+  text: "AI Agent 编程智能体实战手册"
+  tagline: 面向 Google Antigravity、Codex、Claude Code 等 AI 编程智能体工具的使用文档、工程规范与 Skills 技能体系
   image:
     src: /hero.svg
-    alt: Ateng-AI 智能体工程知识库
+    alt: Ateng-Agent 智能体工程知识库
   actions:
     - theme: brand
-      text: 🚀 技能中心大厅
+      text: 🤖 智能体工具中心
+      link: /agent/
+    - theme: alt
+      text: 🛠️ 技能体系大厅
       link: /skills/
     - theme: alt
       text: 🌟 GitHub
-      link: https://github.com/atengk/Ateng-AI
+      link: https://github.com/atengk/Ateng-Agent
 
 features:
-  - icon: 🛠️
-    title: Skills 技能中心
-    details: "【✅ 核心已就绪】沉淀专业化 Agent Skills 扩展库，收录 Anthropic 官方规范、Matt Pocock 套件、Superpowers 自动化交付与 Spec Kit 规格驱动四大生产级技能体系。"
-    link: /skills/
   - icon: 🤖
-    title: AI Agent 智能体
-    details: "【🚧 规划建设中】深入实践 Google Antigravity、Claude Code 等现代智能体工具，探索多 Agent 协同编排与自主执行机制。"
+    title: 主流 Agent 工具实战
+    details: "深度实战 Google Antigravity、Codex、Claude Code 等现代编程智能体，涵盖环境依赖部署、多 Agent 协作、工作流定制与日常开发避坑指南。"
     link: /agent/
+  - icon: 🛠️
+    title: 企业级 Skills 技能体系
+    details: "沉淀高质量 Agent Skills 扩展库，收录 Anthropic 官方规范、Matt Pocock 套件、Superpowers 自动化交付与 Spec Kit 规格驱动四大生产级技能套件。"
+    link: /skills/
   - icon: 🔌
-    title: MCP 协议生态
-    details: "【🚧 规划建设中】基于 Model Context Protocol 统一标准，安全打通数据库、开发工具、本地文件与企业私有 MCP Server。"
+    title: MCP 统一上下文协议
+    details: "基于 Model Context Protocol 统一标准，赋予智能体安全访问 MySQL、Redis、Git 仓库、飞书办公与自定义私有 MCP Server 的全域能力。"
     link: /mcp/
-  - icon: 🧠
-    title: 本地私有大模型
-    details: "【🚧 规划建设中】探索 Ollama、vLLM 高并发推理基座，实战 DeepSeek、Qwen 等开源大模型的本地化部署与优化。"
-    link: /llm/
-  - icon: 📚
-    title: RAG 知识库
-    details: "【🚧 规划建设中】结合向量数据库、文档语义切块与混合检索重排技术，构建垂直领域精准问答与文档检索系统。"
-    link: /rag/
+  - icon: 📋
+    title: 智能体工程与规范治理
+    details: "落地严格的 Local-First 两阶段提交防线、单上下文领域模型 (CONTEXT.md)、全局规则继承与多子智能体并发排障工程规范。"
+    link: /adr/0001-local-first-git-commit-policy
 ---

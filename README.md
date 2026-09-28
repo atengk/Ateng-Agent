@@ -1,20 +1,20 @@
 <div align="center">
 
-# Ateng-AI
+# Ateng-Agent
 
-**工业级 AI 智能体、MCP 协议与大模型工具链技术知识库**
+**面向 Google Antigravity、Codex、Claude Code 的 AI 编程智能体实战手册**
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Author](https://img.shields.io/badge/Author-Ateng-green.svg)](https://github.com/atengk)
-[![Documentation](https://img.shields.io/badge/Docs-Online-success.svg)](https://atengk.github.io/Ateng-AI/)
+[![Documentation](https://img.shields.io/badge/Docs-Online-success.svg)](https://atengk.github.io/Ateng-Agent/)
 [![VitePress](https://img.shields.io/badge/Built%20with-VitePress%201.6-646cff.svg)](https://vitepress.dev/)
 [![Status](https://img.shields.io/badge/Status-Active%20Building-orange.svg)]()
 
 <p align="center">
-  持续沉淀与记录 AI Agent 智能体生态、MCP（Model Context Protocol）协议、Skills 技能扩展库、本地私有化大模型与 LLMOps 工具链的技术文档与实战经验。
+  持续沉淀与记录 Google Antigravity、Codex、Claude Code 等自主编程智能体工具链的使用文档、工程规范、MCP 统一协议与企业级 Agent Skills 技能体系。
 </p>
 
-[🌐 **在线访问知识库网站**](https://atengk.github.io/Ateng-AI/) · [📖 **Matt Pocock 技能套件指南**](https://atengk.github.io/Ateng-AI/skills/mattpocock/) · [📋 **仓库 Agent 行为准则**](AGENTS.md)
+[🌐 **在线访问知识库网站**](https://atengk.github.io/Ateng-Agent/) · [📖 **Matt Pocock 技能套件指南**](https://atengk.github.io/Ateng-Agent/skills/mattpocock/) · [📋 **仓库 Agent 行为准则**](AGENTS.md)
 
 </div>
 
@@ -22,12 +22,12 @@
 
 ## 📌 仓库定位
 
-随着大语言模型从单纯的“对话交互”向“行动决策（Agentic Workflow）”演进，AI 智能体正全面重构现代研发与生产力流程。
+随着编程辅助工具从单纯的代码补全向“全自主行动智能体（Autonomous Coding Agent）”演进，以 **Google Antigravity**、**Codex** 和 **Claude Code** 为代表的 Harness 正在重塑现代研发流程。
 
-`Ateng-AI` 旨在作为个人的 **工业级 AI 核心技术与工程化落地知识库**，重点记录：
-1. **智能体与工具链实操**：从主流 AI Agent 宿主软件的使用调优，到基于 MCP 协议的系统级能力打通。
-2. **能力与规则沉淀**：收集并自研高价值 Agent Skills、行为准则（`AGENTS.md`）与系统提示词。
-3. **私有化模型基座**：记录开源大模型在本地或私有算力上的部署、推理加速与工程集成。
+`Ateng-Agent` 旨在作为个人的 **AI 编程智能体工具实战与工程化落地知识库**，重点记录：
+1. **智能体 Harness 实操**：聚焦 Google Antigravity、Codex、Claude Code 等核心工具的环境配置、多 Agent 协作、工作流编排与日常避坑指南；
+2. **能力与规则沉淀**：收集并自研高价值 Agent Skills（Anthropic 官方、Matt Pocock 套件、Superpowers、Spec Kit）与工程规范；
+3. **MCP 上下文连接**：基于 Model Context Protocol 协议安全赋能智能体调用本地数据库、Git 仓库与企业工具。
 
 ---
 
@@ -35,65 +35,53 @@
 
 ```
                       ┌─────────────────────────────────┐
-                      │            Ateng-AI             │
-                      │  工业级 AI 智能体与技术架构体系 │
+                      │            Ateng-Agent             │
+                      │  AI 编程智能体工具与技能知识矩阵 │
                       └────────────────┬────────────────┘
                                        │
-        ┌──────────────┬───────────────┼───────────────┬──────────────┐
-        ▼              ▼               ▼               ▼              ▼
-   【AI Agent】    【Skills 套件】   【MCP 协议】     【本地大模型】   【RAG 知识库】
-  • Antigravity  • 25 个工程技能   • 数据库与工具  • Ollama/vLLM   • 向量检索增强
-  • Claude Code  • 需求推演规划    • Git 与研发协同 • DeepSeek/Qwen • 混合多路召回
-  • 多智能体调度 • 架构与双轴审查  • 办公自动化     • 私有算力推理  • 垂直问答落地
+        ┌──────────────────────────────┼──────────────────────────────┐
+        ▼                              ▼                              ▼
+  【Agent 工具链】                【Skills 体系】                【MCP 协议】
+ • Google Antigravity 专栏       • Matt Pocock 25 工程技能套件  • 数据库连接与权限隔离
+ • Codex CLI 指令与实战          • Anthropic 官方规范体系       • Git 与研发流水线联动
+ • Claude Code 自愈排障          • Superpowers 自动化交付       • 飞书与自动化办公
+ • 多子智能体编排与隔离          • Spec Kit 规格驱动开发        • 私有 MCP Server 扩展
 ```
 
-### 1. 🤖 AI Agent 实践与生态 ([`agent/`](agent/))
-- **编码与生产力 Agent**：深入使用并评测 Antigravity、Claude Code、Cursor、Roo Code 等智能体工具。
-- **工作流编排**：多智能体（Multi-Agent）协同机制、子任务派发策略与自动化流程。
+### 1. 🤖 AI Agent 实践与生态 ([`docs/agent/`](docs/agent/))
+- **Google Antigravity**：IDE 深度集成、全局任务树感知、子智能体调度与反应式唤醒机制；
+- **Codex**：极速命令行代码生成、模板化重构与提示词心法；
+- **Claude Code**：终端原生自主排障、跨目录巡检与测试闭环。
 
-### 2. 🛠️ Agent Skills & 规则库 ([`skills/`](skills/))
-- **Matt Pocock 专业工程技能套件**：涵盖 **25 个工业级技能** 的全生命周期研发方法论，涵盖需求推演（`grilling`, `grill-with-docs`）、规格制定（`to-spec`）、示踪弹切片（`to-tickets`）、深层模块设计（`codebase-design`）、TDD 红绿循环（`tdd`）、双轴代码审查（`code-review`）到会话交接（`handoff`）。
-- **统一领域语言与 ADR**：根目录配备 [`CONTEXT.md`](CONTEXT.md) 词汇表与 [`docs/adr/`](docs/adr/) 架构决策记录。
-- **行为准则规范化**：建立严格的 [`AGENTS.md`](AGENTS.md) 仓库级行为守则与 Git 提交红线。
+### 2. 🛠️ Agent Skills 技能库 ([`docs/skills/`](docs/skills/))
+- **四大生产级套件**：涵盖 Matt Pocock 套件、Anthropic 官方规范、Superpowers 与 Spec Kit；
+- **工程治理闭环**：配备统一领域语言 [`CONTEXT.md`](CONTEXT.md) 与架构决策记录 [`docs/adr/`](docs/adr/)。
 
-### 3. 🔌 MCP (Model Context Protocol) ([`mcp/`](mcp/))
-- **协议标准与接入**：基于 Anthropic 提出的 MCP 统一协议规范，让智能体安全连接外部环境。
-- **常用服务端整合**：
-  - 数据库操作：MySQL、PostgreSQL、Redis 等只读/读写安全配置。
-  - 研发与版本控制：Git、Gitee、GitHub、IDE 联动。
-  - 办公与协同：飞书、邮件推送、定时任务等。
-- **自定义 MCP 开发**：Node.js / Python 驱动的私有 MCP 服务端开发记录。
-
-### 4. 🧠 本地大模型与基础设施 (LLMOps) ([`llm/`](llm/))
-- **轻量本地推理**：Ollama、LM Studio 快速接入与离线运行。
-- **高并发推理引擎**：vLLM、TensorRT-LLM 部署配置与显存优化。
-- **模型探索**：DeepSeek、Qwen（通义千问）等优秀开源模型的实测、量化与对比。
-
-### 5. 📚 RAG 与外挂知识库 ([`rag/`](rag/))
-- **向量数据库集成**：Chroma、Milvus、Qdrant 等向量存储应用。
-- **知识检索增强**：文档分块处理、多路召回与重排序（Rerank）优化。
+### 3. 🔌 MCP (Model Context Protocol) ([`docs/mcp/`](docs/mcp/))
+- **协议标准与接入**：安全打通 MySQL、Redis、Git、终端工具与私有服务。
 
 ---
 
 ## 🗂️ 目录结构说明
 
 ```text
-Ateng-AI/
+Ateng-Agent/
 ├── .github/workflows/    # CI/CD 自动化构建部署配置 (GitHub Actions)
-├── .vitepress/           # VitePress 站点配置、侧边栏、自定义主题与样式
-├── agent/                # AI Agent 智能体生态与实践
-├── docs/
+├── docs/                 # VitePress 知识库核心根目录
+│   ├── .vitepress/       # Zenith 旗舰主题配置、侧边栏与交互组件
 │   ├── adr/              # 架构决策记录 (Architecture Decision Records)
-│   └── agents/           # 智能体工程规范 (Issue Tracker, Triage, Domain Docs)
-├── llm/                  # 本地私有化大模型与 LLMOps 推理基座
-├── mcp/                  # Model Context Protocol 协议生态与 Server 部署
-├── rag/                  # RAG 知识检索增强与向量知识库
-├── skills/               # Agent Skills 技能中心
-│   └── mattpocock/       # Matt Pocock 25 个专业工程技能全景指南
+│   ├── agent/            # AI Agent 智能体工具实战 (Antigravity / Codex / Claude Code)
+│   ├── agents/           # 智能体工程规范 (Issue Tracker, Triage, Domain Docs)
+│   ├── components/       # 交互短代码组件内参手册
+│   ├── mcp/              # Model Context Protocol 协议生态与 Server 部署
+│   ├── public/           # 静态公共资源 (Logo, Favicon, SVG 矢量)
+│   ├── skills/           # Agent Skills 生产级技能体系 (Anthropic / Matt Pocock / 等)
+│   └── index.md          # 文档站点门户首页落地页
 ├── AGENTS.md             # 仓库级 AI Agent 行为准则与操作红线 (必读)
 ├── CONTEXT.md            # 统一领域语言词汇表 (Ubiquitous Language Glossary)
-├── index.md              # 文档站点门户首页配置
-├── package.json          # 项目依赖配置 (VitePress, Mermaid 插件等)
+├── uno.config.ts         # UnoCSS 原子化图标与样式规则
+├── tsconfig.json         # TypeScript 严格类型检查配置
+├── package.json          # 项目依赖配置
 └── pnpm-lock.yaml        # pnpm 依赖锁文件
 ```
 
@@ -111,8 +99,8 @@ Ateng-AI/
 
 ```bash
 # 1. 克隆代码仓库
-git clone https://github.com/atengk/Ateng-AI.git
-cd Ateng-AI
+git clone https://github.com/atengk/Ateng-Agent.git
+cd Ateng-Agent
 
 # 2. 安装依赖 (使用 pnpm)
 pnpm install

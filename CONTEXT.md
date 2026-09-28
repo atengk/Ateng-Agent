@@ -132,6 +132,25 @@ _Avoid_: Metric KPI, performance rule, scorecard guard, target rule
 在医学临床试验数据清洗与质控中，断言受试者生理生化参数、用药剂量与访视时间窗必须符合医学病理逻辑与方案契约，违背不变量时自动触发数据质疑（Query）。
 _Avoid_: Medical check, GCP validation, trial rule, protocol validator
 
+### 编程智能体工具链与运行时 (Coding Agent Toolchain & Runtime)
+
+**Coding Agent Harness (编程智能体运行容器)**:
+为大语言模型提供终端执行、文件读写、工具调用拦截、上下文生命周期管理与安全约束的自治运行环境（以 Google Antigravity、Codex、Claude Code 为核心实践基准）。
+_Avoid_: Chat UI, IDE plugin, LLM wrapper, web assistant
+
+**Reactive Wakeup (响应式事件唤醒)**:
+智能体在发起耗时异步任务（如后台命令、子智能体执行）后主动退出轮询等待，仅在操作系统事件、子智能体消息或定时器满足预设条件时由宿主框架自动注入上下文并恢复调度的事件驱动机制。
+_Avoid_: Polling loop, busy waiting, sleep check
+
+**Subagent Tree (子智能体派生树)**:
+主智能体依据关注点分离原则，将研究、测试、代码审查等独立职责委托给具有隔离上下文工作区的专用子智能体实例，形成树状层级协同拓扑的执行结构。
+_Avoid_: Background thread, multi-threading, worker process
+
+**Context Hygiene (上下文卫生度)**:
+通过渐进式披露、大输出文件重定向、历史轮次压缩以及主动清理失效信息，将上下文窗口 Token 消耗维持在健康水位并杜绝注意力稀释的工程纪律。
+_Avoid_: Prompt optimization, context dumping, prompt stuffing
+
+
 
 
 

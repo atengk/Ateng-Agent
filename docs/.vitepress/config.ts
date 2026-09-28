@@ -1,5 +1,5 @@
 /**
- * VitePress 站点核心配置 (Ateng-AI 融合 VitePress Zenith 旗舰级架构)
+ * VitePress 站点核心配置 (Ateng-AI 聚焦 AI 编程智能体工具与技能生态)
  * @author Ateng
  * @since 2026-09-28
  */
@@ -11,11 +11,10 @@ import UnoCSS from 'unocss/vite'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 
 const require = createRequire(import.meta.url)
-const base = process.env.BASE_PATH || '/Ateng-AI/'
+const base = process.env.BASE_PATH || '/Ateng-Agent/'
 
 /**
  * Zenith 旗舰级特性开关矩阵 (Zenith Feature Switches)
- * 统一管控全站特性开闭与默认状态
  */
 const zenithConfig = {
   // 1. 进阶/特定场景特性（默认关闭）
@@ -42,8 +41,8 @@ const zenithConfig = {
 
 export default withPwa(defineConfig({
   base,
-  title: 'AI 技术网站',
-  description: '工业级 AI 智能体与技术架构知识库',
+  title: 'AI Agent 编程工具与技能指南',
+  description: '面向 Google Antigravity、Codex、Claude Code 等 AI 编程智能体的实战使用文档、MCP 协议外设与企业级 Skills 技能体系',
   lang: 'zh-CN',
 
   pwa: {
@@ -52,9 +51,9 @@ export default withPwa(defineConfig({
     includeAssets: ['favicon.svg', 'logo.svg', 'hero.svg'],
     manifest: {
       id: base,
-      name: 'AI 技术网站',
-      short_name: 'Ateng-AI',
-      description: '工业级 AI 智能体与技术架构知识库',
+      name: 'AI Agent 编程工具与技能指南',
+      short_name: 'Ateng-Agent',
+      description: '面向 Google Antigravity、Codex、Claude Code 等 AI 编程智能体的实战使用文档、MCP 协议外设与企业级 Skills 技能体系',
       theme_color: '#6366f1',
       background_color: '#0f172a',
       display: 'standalone',
@@ -78,7 +77,7 @@ export default withPwa(defineConfig({
   },
 
   themeConfig: {
-    siteTitle: '阿腾集团',
+    siteTitle: '阿腾智能体',
     logo: '/logo.svg',
 
     // Zenith 旗舰级技术特性全局开关矩阵
@@ -86,20 +85,26 @@ export default withPwa(defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
-      { text: 'Agent', link: '/agent/' },
       {
-        text: 'Skills',
+        text: 'Agent 工具',
         items: [
-          { text: '🧭 技能中心', link: '/skills/' },
+          { text: '🤖 工具概览与选型', link: '/agent/' },
+          { text: '🪐 Google Antigravity', link: '/agent/antigravity/' },
+          { text: '⚡ Codex', link: '/agent/codex/' },
+          { text: '🧠 Claude Code', link: '/agent/claude-code/' },
+        ],
+      },
+      {
+        text: 'Skills 体系',
+        items: [
+          { text: '🧭 技能中心大厅', link: '/skills/' },
           { text: '🛠️ Matt Pocock 技能套件', link: '/skills/mattpocock/' },
           { text: '⚡ Anthropic 官方技能体系', link: '/skills/anthropic/' },
           { text: '🦸 Superpowers 自动化交付', link: '/skills/superpowers/' },
           { text: '🌱 Spec Kit 规格驱动开发', link: '/skills/spec-kit/' },
         ],
       },
-      { text: 'MCP', link: '/mcp/' },
-      { text: '大模型', link: '/llm/' },
-      { text: 'RAG', link: '/rag/' },
+      { text: 'MCP 生态', link: '/mcp/' },
       {
         text: '关于',
         items: [
@@ -115,9 +120,35 @@ export default withPwa(defineConfig({
     sidebar: {
       '/agent/': [
         {
-          text: 'AI Agent',
+          text: 'Agent 工具体系',
           items: [
-            { text: '🤖 Agent 概览', link: '/agent/' },
+            { text: '🤖 工具概览与选型矩阵', link: '/agent/' },
+          ],
+        },
+        {
+          text: 'Google Antigravity 专栏',
+          collapsed: false,
+          items: [
+            { text: '🪐 架构全景与快速上手', link: '/agent/antigravity/' },
+            { text: '🚀 环境安装与凭据配置', link: '/agent/antigravity/install-and-config' },
+            { text: '📋 Rules 与工作流规范', link: '/agent/antigravity/workflows-and-rules' },
+            { text: '🤝 子智能体编排与协同实战', link: '/agent/antigravity/subagents-and-teamwork' },
+          ],
+        },
+        {
+          text: 'Codex 专栏',
+          collapsed: false,
+          items: [
+            { text: '⚡ 快速上手与 CLI 指令', link: '/agent/codex/' },
+            { text: '💡 提示词心法与工程实践', link: '/agent/codex/best-practices' },
+          ],
+        },
+        {
+          text: 'Claude Code 专栏',
+          collapsed: false,
+          items: [
+            { text: '🧠 架构全景与快速上手', link: '/agent/claude-code/' },
+            { text: '🛠️ 工程实战与最佳实践', link: '/agent/claude-code/best-practices' },
           ],
         },
       ],
@@ -182,25 +213,9 @@ export default withPwa(defineConfig({
       ],
       '/mcp/': [
         {
-          text: 'MCP 协议',
+          text: 'MCP 协议生态',
           items: [
-            { text: '🔌 MCP 概览', link: '/mcp/' },
-          ],
-        },
-      ],
-      '/llm/': [
-        {
-          text: '本地大模型',
-          items: [
-            { text: '🧠 大模型概览', link: '/llm/' },
-          ],
-        },
-      ],
-      '/rag/': [
-        {
-          text: 'RAG 知识库',
-          items: [
-            { text: '📚 RAG 概览', link: '/rag/' },
+            { text: '🔌 MCP 协议概览与实战', link: '/mcp/' },
           ],
         },
       ],
@@ -209,7 +224,7 @@ export default withPwa(defineConfig({
     socialLinks: [
       {
         icon: 'github',
-        link: 'https://github.com/atengk/Ateng-AI',
+        link: 'https://github.com/atengk/Ateng-Agent',
         ariaLabel: 'GitHub',
       },
       {
@@ -261,7 +276,7 @@ export default withPwa(defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/atengk/Ateng-AI/edit/main/docs/:path',
+      pattern: 'https://github.com/atengk/Ateng-Agent/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页',
     },
 
@@ -404,7 +419,6 @@ export default withPwa(defineConfig({
     },
   },
 
-  // 死链处理策略
   ignoreDeadLinks: true,
 
   vite: {

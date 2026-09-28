@@ -28,6 +28,16 @@ body, h1, h2, h3, h4, h5, h6, p, li {
   -webkit-text-fill-color: transparent;
 }
 
+/* 首页 Hero 标题中文排版与行高优化：消除大字号行高不足导致的笔画碰撞与文字重叠 */
+.VPHero .heading {
+  gap: 8px;
+}
+
+.VPHero .name,
+.VPHero .text {
+  line-height: 1.28 !important;
+}
+
 .VPHero .image-container {
   width: 100%;
   max-width: 380px;
