@@ -88,3 +88,21 @@ GitHub Issues（通过 `gh` CLI 管理）。详见 [`docs/agents/issue-tracker.m
 ### Domain docs
 
 单上下文架构（[`CONTEXT.md`](CONTEXT.md) 与 [`docs/adr/`](docs/adr/)）。详见 [`docs/agents/domain.md`](docs/agents/domain.md)。
+
+---
+
+## 六、信息安全与机密脱敏红线 (最高红线)
+
+> [!CAUTION] 核心安全红线：零明文不变量 (Zero-Secret Invariant)
+> 任何 AI Agent 交付成果（文档、代码、测试、会话）必须 100% 保持占位符输出，严禁明文凭据入库！
+> 详细架构决策参见：[`docs/adr/0003-mcp-tool-sandboxing-and-write-guard.md`](docs/adr/0003-mcp-tool-sandboxing-and-write-guard.md)。
+
+1. **探查资产自动转译 (Inspection Sanitization)**：
+   - 探查本地环境（环境变量、配置、脚本、数据库元数据）获知真实凭据或私有地址时，输出交付物时一律强制替换为标准占位符（如 `${SERVICE_PASSWORD}`、`YOUR_API_TOKEN`、`user@example.com`），严禁原样回填。
+2. **瞬态内存沙箱 (Transient Memory Sandbox)**：
+   - 开发者主动在会话中提供真实凭据时，仅限当前内存调用，严禁写入任何文件；回复必须自动掩码（如 `sk-***abcd`）并提示开发者及时轮换。
+3. **单测语义化桩豁免 (Mock Exemption)**：
+   - 仅限在单测夹具（`*Test.*`）中使用无实际危害的语义化伪数据（如 `test/123456`、`mock-token`）；严禁在单测中携带真实公网 IP、真实域名或有效凭据。
+4. **提交前安全熔断 (Pre-commit Scan Gate)**：
+   - 收到显式提交指令时，前置自检暂存区 Diff；发现疑似明文机密残留立即中断提交并告警。
+

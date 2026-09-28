@@ -150,8 +150,28 @@ _Avoid_: Background thread, multi-threading, worker process
 通过渐进式披露、大输出文件重定向、历史轮次压缩以及主动清理失效信息，将上下文窗口 Token 消耗维持在健康水位并杜绝注意力稀释的工程纪律。
 _Avoid_: Prompt optimization, context dumping, prompt stuffing
 
+### 模型上下文协议生态 (Model Context Protocol Ecosystem)
 
+**MCP Host (宿主客户端)**:
+发起 MCP 会话、协调大语言模型推理并调度工具调用生命周期的宿主应用程序（如 Google Antigravity、Claude Code、Cursor、VS Code）。
+_Avoid_: LLM client, AI IDE, frontend caller
 
+**MCP Server (协议服务端)**:
+通过 Stdio 或 Streamable HTTP/SSE 向 Host 暴露 Tools、Resources 和 Prompts 形式化契约的轻量自治服务进程。
+_Avoid_: Plugin backend, API service, tool worker
 
+**MCP Transport (传输层协议)**:
+Host 与 Server 之间底层通信载体。标准规范支持基于进程标准输入输出的管道传输（Stdio）与跨网络的流式 HTTP/Server-Sent Events（SSE）。
+_Avoid_: Socket channel, API tunnel, RPC pipe
 
+**MCP Capability Negotiation (能力协商握手)**:
+客户端与服务端在建立连接初期（`initialize` / `notifications/initialized`）双向声明各自支持的核心原语（Resources、Prompts、Tools、Sampling、Roots）的功能协商过程。
+_Avoid_: Handshake, auth check, version exchange
 
+**MCP Tool Sandboxing (破坏性工具沙箱与审批流)**:
+对具备写权限、状态变更或不可逆特征的 MCP 工具（如 SQL 更新、邮件发送、代码库写入）实施的受控执行机制，默认要求人工二次授权确认（Human-in-the-Loop）。详见 `docs/adr/0003-mcp-tool-sandboxing-and-write-guard.md`。
+_Avoid_: Security barrier, confirmation popup, safety guard
+
+**FastMCP**:
+基于 Python 类型注解与装饰器语法糖的高效 MCP 服务端研发框架，支持零样本工具自动解析、类型校验与微服务快速发布。
+_Avoid_: Python MCP wrapper, quick MCP tool
