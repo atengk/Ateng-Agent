@@ -1,22 +1,38 @@
 {
   "name": "Ateng-AI",
-  "description": "工程化框架技术网站",
-  "private": true,
   "version": "1.0.0",
+  "private": true,
+  "description": "工业级 AI 智能体与技术架构知识库",
   "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
-  },
-  "devDependencies": {
-    "dayjs": "^1.11.23",
-    "mermaid": "^12.0.0",
-    "vitepress": "1.6.4",
-    "vitepress-plugin-mermaid": "^2.0.17",
-    "vue": "^3.5.43"
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "medium-zoom": "^1.1.0"
-  }
+    "minisearch": "^7.2.0",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.25",
+    "@shikijs/vitepress-twoslash": "^4.4.3",
+    "@stackblitz/sdk": "^1.11.1",
+    "@unocss/preset-icons": "^66.0.0",
+    "@unocss/preset-uno": "^66.0.0",
+    "@vite-pwa/vitepress": "^1.1.0",
+    "dayjs": "^1.11.23",
+    "markdown-it-mathjax3": "^4.3.2",
+    "markmap-lib": "^0.18.12",
+    "markmap-view": "^0.18.12",
+    "medium-zoom": "^1.1.0",
+    "mermaid": "^12.0.0",
+    "typescript": "^5.7.3",
+    "unocss": "^66.0.0",
+    "vitepress": "^1.6.3"
+  },
+  "author": "Ateng"
 }
