@@ -23,6 +23,7 @@
 !*.png
 !.nojekyll
 !.gitignore
+!.npmrc
 !*.md
 !*.json
 !*.yaml
