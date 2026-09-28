@@ -21,12 +21,12 @@
                                   │    Ateng-AI 智能体技能生态体系    │
                                   └────────────────┬────────────────┘
                                                    │
-         ┌────────────────────────┬────────────────┴────────────────┬────────────────────────┐
-         ▼                        ▼                                 ▼                        ▼
-【Anthropic 官方体系】     【Matt Pocock 工程套件】          【Superpowers 自动化】    【Spec Kit 规格驱动】
- • 开放标准与元技能         • 25 个专业工程技能               • 15 个全自主研发技能     • 5 阶段 SDD 闭环研发
- • 渐进式披露三层架构       • 示踪弹任务与双轴审查            • 严格 TDD 与 Worktree    • 宪法记忆与双轨架构
- 👉 [进入 Anthropic 专题](/skills/anthropic/) 👉 [进入 Matt Pocock 专题](/skills/mattpocock/) 👉 [进入 Superpowers 专题](/skills/superpowers/) 👉 [进入 Spec Kit 专题](/skills/spec-kit/)
+   ┌───────────────────┬───────────────────┬───────┴───────────┬───────────────────┬───────────────────┐
+   ▼                   ▼                   ▼                   ▼                   ▼                   ▼
+【Anthropic 体系】   【Matt Pocock 套件】 【Superpowers 交付】 【Spec Kit 规格】   【OpenSpec 规范】
+ • 开放标准与元技能  • 25 个专业工程技能  • 15 个自主研发技能  • 5 阶段 SDD 闭环   • Delta Specs 差分
+ • 渐进式披露三层    • 示踪弹任务切片    • 严格 TDD 闭环      • 宪法记忆防漂移    • 跨仓 Stores 治理
+ 👉 [Anthropic 专题](/skills/anthropic/) 👉 [Matt Pocock 专题](/skills/mattpocock/) 👉 [Superpowers 专题](/skills/superpowers/) 👉 [Spec Kit 专题](/skills/spec-kit/) 👉 [OpenSpec 专题](/skills/openspec/)
 ```
 
 ### 1. [Anthropic 官方技能规范与全景指南](/skills/anthropic/)
@@ -70,6 +70,15 @@ Matt Pocock 提出的一套工业级 AI Agent 研发协作方法论，将自然�
 - **[🔄 核心工作流全景实战](/skills/spec-kit/02-core-workflow-sdd)**：Constitution 宪法 → Specify → Plan → Tasks → Implement 全链路。
 - **[🛠️ CLI 命令行与技能速查](/skills/spec-kit/03-cli-and-commands)**：`specify-cli` 全量参数字典、`/speckit-*` Agent 技能及故障排除。
 - **[🚀 扩展生态与企业实战](/skills/spec-kit/04-extensions-and-advanced)**：Bug 修复流、Idea 评估流、CI/CD 自动化门禁与大型 Monorepo 治理。
+
+### 5. [OpenSpec 规范驱动开发体系 (Fission-AI 官方)](/skills/openspec/)
+由 Fission-AI 开源的轻量级 SDD 规范驱动开发框架。采用独创 Delta Specs（差分规范）与流体工件链设计，专为现有棕地项目（Brownfield）设计，支持跨仓 Stores 集中治理与 30+ 种 AI 编程工具。
+
+- **[📐 全景总览与架构导航](/skills/openspec/)**：从 Vibe Coding 到规范驱动确定性跃迁、架构拓扑全景与交付矩阵。
+- **[🏛️ 核心理念与架构契约](/skills/openspec/01-core-concepts-and-architecture)**：SDD 五大支柱、Delta Specs 差分语法（ADDED/MODIFIED/REMOVED）与目录元数据契约。
+- **[🚀 安装部署与快速上手](/skills/openspec/02-installation-and-quickstart)**：Node.js >= 20.19 环境基线、全局 CLI 安装与 `add-dark-mode` 端到端实战。
+- **[🛠️ CLI 命令行与交互式指令](/skills/openspec/03-cli-and-slash-commands)**：`openspec` 终端命令全集、`/opsx:*` 交互指令（Core vs Expanded）与排障矩阵。
+- **[🌐 高级定制与多仓协作](/skills/openspec/04-advanced-workflows-and-stores)**：`config.yaml` 规则注入、自定义 `schema.yaml` 扩展与 Multi-Repo Stores 跨仓治理架构。
 
 ---
 
@@ -133,5 +142,19 @@ specify init my-app --integration copilot
 /speckit-implement
 ```
 
+### 5. 驱动 OpenSpec 规范驱动开发工作流
+
+```bash
+# 1. 全局安装 openspec CLI 并初始化工程
+npm install -g @fission-ai/openspec@latest
+openspec init --tools claude-code,cursor,github-copilot
+
+# 2. 在 IDE Chat 对话中依序驱动流体工件生命周期
+/opsx:explore
+/opsx:propose <特性描述或名称>
+/opsx:apply
+/opsx:archive
+```
+
 > [!TIP] 推荐阅读路径
-> 建议开发者先从 [Anthropic 开放标准与技术导读](/skills/anthropic/) 开始，理解技能标准与渐进式加载机制；随后结合 [Matt Pocock 套件全景导读](/skills/mattpocock/) 掌握敏捷设计树与示踪弹任务规划；通过 [Superpowers 自动化交付全景导读](/skills/superpowers/) 掌握生产级多智能体协同与严格 TDD 落地闭环；最后依托 [Spec Kit 规格驱动开发全景导读](/skills/spec-kit/) 建立宪法约束下的防漂移工程闭环。
+> 建议开发者先从 [Anthropic 开放标准与技术导读](/skills/anthropic/) 开始，理解技能标准与渐进式加载机制；随后结合 [Matt Pocock 套件全景导读](/skills/mattpocock/) 掌握敏捷设计树与示踪弹任务规划；通过 [Superpowers 自动化交付全景导读](/skills/superpowers/) 掌握生产级多智能体协同与严格 TDD 落地闭环；依托 [Spec Kit 规格驱动开发全景导读](/skills/spec-kit/) 建立宪法约束下的防漂移工程闭环；最后通过 [OpenSpec 规范驱动开发全景导读](/skills/openspec/) 掌握轻量级 Delta Specs 差分规范与企业级 Multi-Repo Stores 跨仓协作范式。
