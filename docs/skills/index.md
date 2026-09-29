@@ -26,7 +26,7 @@
 【Anthropic 体系】   【Matt Pocock 套件】 【Superpowers 交付】 【Spec Kit 规格】   【OpenSpec 规范】
  • 开放标准与元技能  • 25 个专业工程技能  • 15 个自主研发技能  • 5 阶段 SDD 闭环   • Delta Specs 差分
  • 渐进式披露三层    • 示踪弹任务切片    • 严格 TDD 闭环      • 宪法记忆防漂移    • 跨仓 Stores 治理
- 👉 [Anthropic 专题](/skills/anthropic/) 👉 [Matt Pocock 专题](/skills/mattpocock/) 👉 [Superpowers 专题](/skills/superpowers/) 👉 [Spec Kit 专题](/skills/spec-kit/) 👉 [OpenSpec 专题](/skills/openspec/)
+ 👉 [Anthropic 专题](/skills/anthropic/) 👉 [Matt Pocock 专题](/skills/mattpocock/) 👉 [Superpowers 专题](/skills/superpowers/) 👉 [Spec Kit 专题](/skills/spec-kit/) 👉 [OpenSpec 专题](/skills/openspec/) 👉 [UI/UX Pro Max 专题](/skills/ui-ux-pro-max-skill/)
 ```
 
 ### 1. [Anthropic 官方技能规范与全景指南](/skills/anthropic/)
@@ -79,6 +79,14 @@ Matt Pocock 提出的一套工业级 AI Agent 研发协作方法论，将自然�
 - **[🚀 安装部署与快速上手](/skills/openspec/02-installation-and-quickstart)**：Node.js >= 20.19 环境基线、全局 CLI 安装与 `add-dark-mode` 端到端实战。
 - **[🛠️ CLI 命令行与交互式指令](/skills/openspec/03-cli-and-slash-commands)**：`openspec` 终端命令全集、`/opsx:*` 交互指令（Core vs Expanded）与排障矩阵。
 - **[🌐 高级定制与多仓协作](/skills/openspec/04-advanced-workflows-and-stores)**：`config.yaml` 规则注入、自定义 `schema.yaml` 扩展与 Multi-Repo Stores 跨仓治理架构。
+
+### 6. [UI/UX Pro Max 设计智能体系 (Next Level Builder 官方)](/skills/ui-ux-pro-max-skill/)
+面向 AI 编码智能体的“设计系统外脑”与知识库。依托 192 条行业推理规则、79 种可搜风格、192 套调色盘、74 组字体及零依赖 BM25 检索引擎，使智能体摆脱随机猜测与同质化 AI 渐变，输出工业级、高无障碍合规的前端界面。
+
+- **[🎨 全景总览与架构导航](/skills/ui-ux-pro-max-skill/)**：设计外脑定位、多智能体交互全景拓扑、模块导航矩阵与推荐阅读路线。
+- **[🏛️ 核心定位与设计推理架构](/skills/ui-ux-pro-max-skill/01-overview-and-architecture)**：解构 192 条规则、79 种风格、调色排印体系与零依赖 BM25 检索引擎算法。
+- **[⚡ 全平台安装与智能体集成](/skills/ui-ux-pro-max-skill/02-installation-and-integration)**：`ui-ux-pro-max-cli` 部署、Claude Code / Cursor / Windsurf / Copilot / Antigravity 接入及版本同步。
+- **[🛠️ 检索实战、开发范式与质检](/skills/ui-ux-pro-max-skill/03-search-engine-and-best-practices)**：`search.py` 参数、三大设计微调旋钮、4 步 AI 工作流、反模式防御、8 项质检清单及全套件事实依据。
 
 ---
 
@@ -156,5 +164,18 @@ openspec init --tools claude-code,cursor,github-copilot
 /opsx:archive
 ```
 
+### 6. 驱动 UI/UX Pro Max 智能设计系统生成
+
+```bash
+# 1. 全局安装官方 CLI 工具链
+npm install -g ui-ux-pro-max-cli
+
+# 2. 为目标智能体快速初始化技能挂载
+uipro init --ai claude
+
+# 3. 驱动本地 Python 检索引擎生成行业专属设计系统契约与反模式过滤
+python3 scripts/search.py "fintech trading dashboard" --design-system -p "Apex Trader" --density 9 --variance 4 --motion 3 -f markdown
+```
+
 > [!TIP] 推荐阅读路径
-> 建议开发者先从 [Anthropic 开放标准与技术导读](/skills/anthropic/) 开始，理解技能标准与渐进式加载机制；随后结合 [Matt Pocock 套件全景导读](/skills/mattpocock/) 掌握敏捷设计树与示踪弹任务规划；通过 [Superpowers 自动化交付全景导读](/skills/superpowers/) 掌握生产级多智能体协同与严格 TDD 落地闭环；依托 [Spec Kit 规格驱动开发全景导读](/skills/spec-kit/) 建立宪法约束下的防漂移工程闭环；最后通过 [OpenSpec 规范驱动开发全景导读](/skills/openspec/) 掌握轻量级 Delta Specs 差分规范与企业级 Multi-Repo Stores 跨仓协作范式。
+> 建议开发者先从 [Anthropic 开放标准与技术导读](/skills/anthropic/) 开始，理解技能标准与渐进式加载机制；随后结合 [Matt Pocock 套件全景导读](/skills/mattpocock/) 掌握敏捷设计树与示踪弹任务规划；通过 [Superpowers 自动化交付全景导读](/skills/superpowers/) 掌握生产级多智能体协同与严格 TDD 落地闭环；依托 [Spec Kit 规格驱动开发全景导读](/skills/spec-kit/) 建立宪法约束下的防漂移工程闭环；借助 [OpenSpec 规范驱动开发全景导读](/skills/openspec/) 掌握轻量级 Delta Specs 差分规范与企业级 Multi-Repo Stores 跨仓协作范式；最后通过 [UI/UX Pro Max 设计智能全景导读](/skills/ui-ux-pro-max-skill/) 为 AI 注入专业级界面美学与设计系统推理能力。

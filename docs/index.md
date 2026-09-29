@@ -26,7 +26,7 @@ features:
     link: /agent/
   - icon: 🛠️
     title: 企业级 Skills 技能体系
-    details: "沉淀高质量 Agent Skills 扩展库，收录 Anthropic 官方规范、Matt Pocock 套件、Superpowers 自动化交付与 Spec Kit 规格驱动四大生产级技能套件。"
+    details: "沉淀高质量 Agent Skills 扩展库，收录 Anthropic 官方规范、Matt Pocock 套件、Superpowers 自动化交付、Spec Kit、OpenSpec 与 UI/UX Pro Max 六大生产级技能套件。"
     link: /skills/
   - icon: 🔌
     title: MCP 统一上下文协议

@@ -103,6 +103,7 @@ export default withPwa(defineConfig({
           { text: '🦸 Superpowers 自动化交付', link: '/skills/superpowers/' },
           { text: '🌱 Spec Kit 规格驱动开发', link: '/skills/spec-kit/' },
           { text: '📐 OpenSpec 规范驱动开发', link: '/skills/openspec/' },
+          { text: '🎨 UI/UX Pro Max 设计智能', link: '/skills/ui-ux-pro-max-skill/' },
         ],
       },
       {
@@ -232,6 +233,16 @@ export default withPwa(defineConfig({
             { text: '🚀 安装部署与快速上手', link: '/skills/openspec/02-installation-and-quickstart' },
             { text: '🛠️ CLI 命令行与交互式指令', link: '/skills/openspec/03-cli-and-slash-commands' },
             { text: '🌐 高级定制与多仓协作', link: '/skills/openspec/04-advanced-workflows-and-stores' },
+          ],
+        },
+        {
+          text: 'UI/UX Pro Max 设计智能',
+          collapsed: false,
+          items: [
+            { text: '🎨 全景总览与架构导航', link: '/skills/ui-ux-pro-max-skill/' },
+            { text: '🏛️ 核心定位与设计推理架构', link: '/skills/ui-ux-pro-max-skill/01-overview-and-architecture' },
+            { text: '⚡ 全平台安装与智能体集成', link: '/skills/ui-ux-pro-max-skill/02-installation-and-integration' },
+            { text: '🛠️ 检索实战、开发范式与质检', link: '/skills/ui-ux-pro-max-skill/03-search-engine-and-best-practices' },
           ],
         },
       ],
