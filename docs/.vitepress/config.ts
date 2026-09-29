@@ -237,48 +237,72 @@ export default withPwa(defineConfig({
       ],
       '/mcp/': [
         {
-          text: 'MCP 生态导航',
+          text: 'MCP 架构全景',
           items: [
             { text: '🔌 协议生态全景与架构大厅', link: '/mcp/' },
           ],
         },
         {
-          text: '核心规范与客户端',
+          text: '协议规范与核心架构',
           collapsed: false,
           items: [
             { text: '📐 协议规范与架构全景', link: '/mcp/protocol/' },
-            { text: '  ├─ 📜 JSON-RPC 2.0 与五大原语', link: '/mcp/protocol/01-json-rpc-and-primitives' },
-            { text: '  ├─ 🔄 传输管道与协商生命周期', link: '/mcp/protocol/02-transports-and-lifecycle' },
-            { text: '💻 客户端集成与配置指南', link: '/mcp/clients/' },
-            { text: '  ├─ 🪐 Antigravity 架构与懒加载', link: '/mcp/clients/01-antigravity-deep-dive' },
-            { text: '  ├─ 🖥️ 多宿主 IDE/CLI 迁移矩阵', link: '/mcp/clients/02-ide-and-cli-matrix' },
+            { text: '📜 JSON-RPC 2.0 与五大原语', link: '/mcp/protocol/01-json-rpc-and-primitives' },
+            { text: '🔄 传输管道与协商生命周期', link: '/mcp/protocol/02-transports-and-lifecycle' },
           ],
         },
         {
-          text: '常用外设生态实战',
+          text: '客户端集成与配置',
+          collapsed: false,
+          items: [
+            { text: '💻 客户端集成与配置指南', link: '/mcp/clients/' },
+            { text: '🪐 Antigravity 架构与懒加载', link: '/mcp/clients/01-antigravity-deep-dive' },
+            { text: '🖥️ 多宿主 IDE/CLI 迁移矩阵', link: '/mcp/clients/02-ide-and-cli-matrix' },
+          ],
+        },
+        {
+          text: '数据库与缓存生态',
           collapsed: false,
           items: [
             { text: '🗄️ 数据库与缓存生态全景', link: '/mcp/database/' },
-            { text: '  ├─ 🐬 MySQL 只读接入与熔断', link: '/mcp/database/01-mysql-integration-and-readonly-guard' },
-            { text: '  ├─ ⚡ Redis 全结构与 Stream 巡检', link: '/mcp/database/02-redis-cache-and-stream-operations' },
-            { text: '🤝 协同办公与生产力全景', link: '/mcp/collaboration/' },
-            { text: '  ├─ 🐦 飞书 Docx 与多维表格', link: '/mcp/collaboration/01-feishu-docx-and-bitable-automation' },
-            { text: '  ├─ 📧 QQ 邮箱 FastMCP 研发', link: '/mcp/collaboration/02-fastmcp-qq-email-service' },
-            { text: '🛠️ 研发效能与工程工具全景', link: '/mcp/dev-tools/' },
-            { text: '  ├─ 📦 Git 本地优先与 Gitee 协作', link: '/mcp/dev-tools/01-git-and-gitee-devops' },
-            { text: '  ├─ 🔌 Apipost 契约与 IDEA 联动', link: '/mcp/dev-tools/02-apipost-and-idea' },
+            { text: '🐬 MySQL 只读接入与熔断', link: '/mcp/database/01-mysql-integration-and-readonly-guard' },
+            { text: '⚡ Redis 全结构与 Stream 巡检', link: '/mcp/database/02-redis-cache-and-stream-operations' },
           ],
         },
         {
-          text: '自研扩展与安全治理',
+          text: '协同办公与生产力',
+          collapsed: false,
+          items: [
+            { text: '🤝 协同办公与生产力全景', link: '/mcp/collaboration/' },
+            { text: '🐦 飞书 Docx 与多维表格', link: '/mcp/collaboration/01-feishu-docx-and-bitable-automation' },
+            { text: '📧 QQ 邮箱 FastMCP 研发', link: '/mcp/collaboration/02-fastmcp-qq-email-service' },
+          ],
+        },
+        {
+          text: '研发效能与工程工具',
+          collapsed: false,
+          items: [
+            { text: '🛠️ 研发效能与工程工具全景', link: '/mcp/dev-tools/' },
+            { text: '📦 Git 本地优先与 Gitee 协作', link: '/mcp/dev-tools/01-git-and-gitee-devops' },
+            { text: '🔌 Apipost 契约与 IDEA 联动', link: '/mcp/dev-tools/02-apipost-and-idea' },
+          ],
+        },
+        {
+          text: '自研 MCP Server 实战',
           collapsed: false,
           items: [
             { text: '🚀 自研 MCP Server 开发实战', link: '/mcp/development/' },
-            { text: '  ├─ 🐍 Python FastMCP 双案例', link: '/mcp/development/01-python-fastmcp-dual-cases' },
-            { text: '  ├─ 📘 TypeScript SDK 与 Inspector', link: '/mcp/development/02-typescript-sdk-and-inspector' },
+            { text: '🐍 Python FastMCP 双案例', link: '/mcp/development/01-python-fastmcp-dual-cases' },
+            { text: '📘 TypeScript SDK 与 Inspector', link: '/mcp/development/02-typescript-sdk-and-inspector' },
+          ],
+        },
+        {
+          text: '安全沙箱与治理规约',
+          collapsed: false,
+          items: [
             { text: '🛡️ 安全沙箱与治理规约', link: '/mcp/security/' },
-            { text: '  ├─ 🛡️ 三级风险模型与二次确认', link: '/mcp/security/01-least-privilege-and-governance' },
-            { text: '  ├─ 🚨 提示词注入与审计日志', link: '/mcp/security/02-threat-modeling-and-audit' },
+            { text: '🛡️ 三级风险模型与二次确认', link: '/mcp/security/01-least-privilege-and-governance' },
+            { text: '🚨 提示词注入与审计日志', link: '/mcp/security/02-threat-modeling-and-audit' },
           ],
         },
       ],
