@@ -6,12 +6,12 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
-import { useRoute } from 'vitepress'
+import { useData } from 'vitepress'
 
-const route = useRoute()
+const { frontmatter } = useData()
 const progress = ref(0)
 
-const isVisible = computed(() => route.path !== '/' && progress.value > 0)
+const isVisible = computed(() => frontmatter.value?.layout !== 'home' && progress.value > 0)
 
 let ticking = false
 

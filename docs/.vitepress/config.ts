@@ -456,6 +456,7 @@ export default withPwa(defineConfig({
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}favicon.svg` }],
     ['meta', { name: 'theme-color', content: '#6366f1' }],
+    ['meta', { name: 'mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' }],
     // 注入防闪烁 (Anti-FOUC) 极速色盘恢复内联脚本

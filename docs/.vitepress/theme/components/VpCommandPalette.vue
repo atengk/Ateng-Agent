@@ -33,7 +33,7 @@ const { isOpen, close, attachGlobalListeners } = useCommandPalette()
 const { isZenMode, toggleZenMode } = useZenMode()
 const { currentPalette, setPalette } = useThemePalette()
 const { openShortcuts } = useKeyboardShortcuts()
-const { isDark, localeIndex, theme } = useData()
+const { isDark, localeIndex, theme, frontmatter } = useData()
 const router = useRouter()
 
 // 输入检索词与高亮指针
@@ -141,23 +141,31 @@ const initMiniSearch = async () => {
 }
 
 // 基础快捷动作列表
-const staticActions = computed<PaletteItem[]>(() => [
-  {
-    id: 'action-zen-mode',
-    title: isZenMode.value ? '退出沉浸专注阅读 (Zen Mode)' : '进入沉浸专注阅读 (Zen Mode)',
-    description: '彻底隐藏顶栏与双侧边栏，聚焦 1240px 黄金纯净视界',
-    category: 'action',
-    icon: 'i-lucide-sparkles',
-    shortcut: ['Alt', 'Z'],
-    badge: '专注阅读',
-    keywords: ['zen', 'focus', '阅读', '专注', '全屏', '侧边栏', '沉浸', 'Alt+Z', 'Alt+F'],
-    perform: () => {
-      toggleZenMode()
-      close()
-    },
-  },
-  {
-    id: 'action-toggle-theme',
+const staticActions = computed<PaletteItem[]>(() => {
+  const isHome = frontmatter.value?.layout === 'home'
+  const actions: PaletteItem[] = []
+
+  // 首页自适应隐藏专注阅读指令，正文页正常呈现
+  if (!isHome) {
+    actions.push({
+      id: 'action-zen-mode',
+      title: isZenMode.value ? '退出沉浸专注阅读 (Zen Mode)' : '进入沉浸专注阅读 (Zen Mode)',
+      description: '彻底隐藏顶栏与双侧边栏，聚焦 1240px 黄金纯净视界',
+      category: 'action',
+      icon: 'i-lucide-sparkles',
+      shortcut: ['Alt', 'Z'],
+      badge: '专注阅读',
+      keywords: ['zen', 'focus', '阅读', '专注', '全屏', '侧边栏', '沉浸', 'Alt+Z', 'Alt+F'],
+      perform: () => {
+        toggleZenMode()
+        close()
+      },
+    })
+  }
+
+  actions.push(
+    {
+      id: 'action-toggle-theme',
     title: isDark.value ? '切换为浅色主题 (Light Mode)' : '切换为深色主题 (Dark Mode)',
     description: '切换全站明暗模式外观风格',
     category: 'action',
@@ -290,8 +298,10 @@ const staticActions = computed<PaletteItem[]>(() => [
       showToast('已切换至「典雅琥珀」强调色')
       close()
     },
-  },
-])
+  })
+
+  return actions
+})
 
 // 全站核心导航列表（解耦硬编码演示文章，完全交由 Minisearch 动态检索驱动）
 const navigationItems = computed<PaletteItem[]>(() => {

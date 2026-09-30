@@ -6,6 +6,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useRouter } from 'vitepress'
 
 const props = withDefaults(
   defineProps<{
@@ -42,17 +43,40 @@ const props = withDefaults(
     badgeType?: 'tip' | 'warning' | 'danger' | 'info' | 'purple'
   }>(),
   {
-    target: '_self',
     badgeType: 'tip',
   }
 )
+
+const router = useRouter()
 
 const resolvedDesc = computed(() => props.desc || props.description || '')
 const isExternal = computed(() => props.link && /^(https?:)?\/\//.test(props.link))
 const resolvedTarget = computed(() => {
   if (props.target) return props.target
-  return isExternal.value ? '_blank' : '_self'
+  return isExternal.value ? '_blank' : undefined
 })
+
+/**
+ * 拦截站内链接，使用 VitePress 客户端路由实现无刷新 SPA 平滑切换
+ * @param e 鼠标点击事件
+ */
+const handleClick = (e: MouseEvent) => {
+  if (!props.link) return
+  // 如果是外链、在新标签页打开、或者用户按住修饰键（Ctrl/Cmd/Shift/Alt）及非左键，允许原生默认行为
+  if (
+    isExternal.value ||
+    resolvedTarget.value === '_blank' ||
+    e.ctrlKey ||
+    e.metaKey ||
+    e.shiftKey ||
+    e.altKey ||
+    e.button !== 0
+  ) {
+    return
+  }
+  e.preventDefault()
+  router.go(props.link)
+}
 </script>
 
 <template>
@@ -62,6 +86,7 @@ const resolvedTarget = computed(() => {
     :href="link"
     :target="link ? resolvedTarget : undefined"
     :rel="link && resolvedTarget === '_blank' ? 'noreferrer noopener' : undefined"
+    @click="handleClick"
   >
     <div class="card-header">
       <div v-if="icon || $slots.icon" class="icon-box">

@@ -10,13 +10,13 @@ import { useRoute } from 'vitepress'
 import { useZenMode } from '../composables/useZenMode'
 
 const route = useRoute()
-const { isZenMode, toggleZenMode } = useZenMode()
+const { isEffectiveZenMode, isHome, toggleZenMode } = useZenMode()
 
 const metaContainer = ref<HTMLElement | null>(null)
 const wordCount = ref(0)
 const readingTime = ref(1)
 
-const isVisible = computed(() => route.path !== '/' && wordCount.value > 0)
+const isVisible = computed(() => !isHome.value && wordCount.value > 0)
 
 /**
  * 统计正文字数并估算阅读时长（以 350 字/分钟为基准）
@@ -111,12 +111,12 @@ watch(
       <button
         type="button"
         class="zen-quick-btn"
-        :class="{ active: isZenMode }"
+        :class="{ active: isEffectiveZenMode }"
         title="一键切换沉浸专注阅读 (快捷键: Alt+Z 或 Alt+F)"
         @click="toggleZenMode"
       >
         <span class="meta-icon i-lucide-sparkles" />
-        <span>{{ isZenMode ? '退出专注' : '专注阅读' }}</span>
+        <span>{{ isEffectiveZenMode ? '退出专注' : '专注阅读' }}</span>
         <span class="shortcut">Alt+Z</span>
       </button>
       <button

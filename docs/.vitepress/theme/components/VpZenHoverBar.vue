@@ -11,7 +11,7 @@ import { useData } from 'vitepress'
 import { useZenMode } from '../composables/useZenMode'
 
 const { page, isDark } = useData()
-const { isZenMode, toggleZenMode } = useZenMode()
+const { isEffectiveZenMode, toggleZenMode } = useZenMode()
 
 const isVisible = ref(false)
 const readingProgress = ref(0)
@@ -39,7 +39,7 @@ const updateProgress = () => {
  * 鼠标靠近屏幕顶部边缘 (Top <= 50px) 时唤出控制胶囊
  */
 const onMouseMove = (e: MouseEvent) => {
-  if (!isZenMode.value) return
+  if (!isEffectiveZenMode.value) return
   if (e.clientY <= 50) {
     isVisible.value = true
     clearTimeout(autoHideTimer)
@@ -57,7 +57,7 @@ const toggleTheme = () => {
 
 // 刚进入专注阅读时，短暂展示 3 秒友好提示，随后自动隐藏
 watch(
-  () => isZenMode.value,
+  () => isEffectiveZenMode.value,
   (val) => {
     if (val) {
       isVisible.value = true
@@ -94,7 +94,7 @@ onUnmounted(() => {
 <template>
   <Teleport to="body">
     <div
-      v-if="isZenMode"
+      v-if="isEffectiveZenMode"
       class="zen-hover-container"
       :class="{ 'is-active': isVisible }"
     >

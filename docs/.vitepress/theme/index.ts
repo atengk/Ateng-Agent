@@ -55,7 +55,25 @@ export default {
   extends: DefaultTheme,
   Layout,
   enhanceApp({ app, router, siteData }) {
+    // 兼容垫片：修复 @shikijs/vitepress-twoslash 对 floating-vue@5.4+ 的内部猴子补丁报错
+    const origComponent = app.component
+    app.component = function (name: string, ...rest: any[]) {
+      if (name === 'VMenu' && rest[0] && !rest[0].components) {
+        rest[0].components = {
+          Popper: {
+            extends: {
+              methods: {
+                show: () => {},
+                hide: () => {},
+              },
+            },
+          },
+        }
+      }
+      return (origComponent as any).call(this, name, ...rest)
+    }
     app.use(TwoslashFloatingVue)
+    app.component = origComponent
     app.component('PackageManagerTabs', PackageManagerTabs)
     app.component('PackageTabs', PackageManagerTabs)
     app.component('Mermaid', Mermaid)

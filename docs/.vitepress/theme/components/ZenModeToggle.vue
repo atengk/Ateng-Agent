@@ -6,14 +6,12 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useRoute } from 'vitepress'
 import { useZenMode } from '../composables/useZenMode'
 
-const route = useRoute()
-const { isZenMode, toggleZenMode } = useZenMode()
+const { isEffectiveZenMode, isHome, toggleZenMode } = useZenMode()
 
 // 仅在非首页文档页面展示悬浮切换胶囊
-const isVisible = computed(() => route.path !== '/')
+const isVisible = computed(() => !isHome.value)
 </script>
 
 <template>
@@ -23,13 +21,13 @@ const isVisible = computed(() => route.path !== '/')
         v-if="isVisible"
         type="button"
         class="zen-mode-toggle"
-        :class="{ active: isZenMode }"
-        :title="isZenMode ? '退出沉浸模式 (快捷键: Alt+Z 或 Esc)' : '开启沉浸式专注阅读 (快捷键: Alt+Z)'"
+        :class="{ active: isEffectiveZenMode }"
+        :title="isEffectiveZenMode ? '退出沉浸模式 (快捷键: Alt+Z 或 Esc)' : '开启沉浸式专注阅读 (快捷键: Alt+Z)'"
         @click="toggleZenMode"
       >
         <span class="icon" aria-hidden="true">
           <svg
-            v-if="!isZenMode"
+            v-if="!isEffectiveZenMode"
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
@@ -57,7 +55,7 @@ const isVisible = computed(() => route.path !== '/')
             <path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7" />
           </svg>
         </span>
-        <span class="label">{{ isZenMode ? '退出专注' : '专注阅读' }}</span>
+        <span class="label">{{ isEffectiveZenMode ? '退出专注' : '专注阅读' }}</span>
         <span class="shortcut">Alt+Z</span>
       </button>
     </transition>
