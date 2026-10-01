@@ -231,4 +231,19 @@ watch(
   background: rgba(99, 102, 241, 0.2);
   color: var(--vp-c-brand-1);
 }
+
+/* 移动端窄屏响应式优化：隐藏物理键提示与打印按钮，避免折行残余分隔符 */
+@media (max-width: 640px) {
+  .print-quick-btn {
+    display: none !important;
+  }
+
+  .zen-quick-btn .shortcut {
+    display: none !important;
+  }
+
+  .doc-meta-bar .meta-divider:last-of-type {
+    display: none;
+  }
+}
 </style>

@@ -290,4 +290,11 @@ onUnmounted(() => {
   color: var(--vp-c-danger-1);
   border-color: var(--vp-c-danger-soft);
 }
+
+/* 移动端与平板窄屏下隐藏顶部鼠标滑出胶囊，防止横向超宽溢出 */
+@media (max-width: 768px) {
+  .zen-hover-container {
+    display: none !important;
+  }
+}
 </style>

@@ -38,20 +38,8 @@ body, h1, h2, h3, h4, h5, h6, p, li {
   line-height: 1.28 !important;
 }
 
-.VPHero .image-container {
-  width: 100%;
-  max-width: 380px;
-  height: 100%;
-  max-height: 380px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* 首页 Hero Logo 浮动动画与品牌光晕增强（全设备通用） */
 .VPHero .image-src {
-  width: 100% !important;
-  max-width: 320px !important;
-  max-height: 320px !important;
   filter: drop-shadow(0 16px 32px rgba(79, 70, 229, 0.28));
   animation: hero-logo-float 5s ease-in-out infinite;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -70,16 +58,36 @@ body, h1, h2, h3, h4, h5, h6, p, li {
   }
 }
 
+/* 仅在桌面宽屏（>= 960px）扩展容器与大图尺寸，移动端严格遵循 VitePress 默认流式占位防塌陷 */
+@media (min-width: 960px) {
+  .VPHero .image-container {
+    width: 100%;
+    max-width: 380px;
+    height: 100%;
+    max-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .VPHero .image-src {
+    max-width: 320px !important;
+    max-height: 320px !important;
+  }
+}
+
 /* 首页特性卡片悬浮高光过渡 */
 .VPFeatures .VPFeature {
   border: 1px solid var(--vp-c-bg-soft);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.VPFeatures .VPFeature:hover {
-  border-color: var(--vp-c-brand-1);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px -10px var(--vp-c-brand-soft);
+@media (hover: hover) {
+  .VPFeatures .VPFeature:hover {
+    border-color: var(--vp-c-brand-1);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -10px var(--vp-c-brand-soft);
+  }
 }
 
 /* Medium-zoom 插图点击灯箱层级与视觉增强 */

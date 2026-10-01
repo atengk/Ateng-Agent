@@ -407,6 +407,14 @@ watch(() => decodedCode.value, () => {
   pointer-events: auto;
 }
 
+/* 触控屏设备（无鼠标 hover）常驻呈现全屏与复制按钮，方便手机端直接点触放大 */
+@media (hover: none), (pointer: coarse) {
+  .mermaid-actions {
+    opacity: 0.85;
+    pointer-events: auto;
+  }
+}
+
 /* GitHub Primer 风格微型按钮 */
 .action-btn {
   display: flex;
